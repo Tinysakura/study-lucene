@@ -48,6 +48,13 @@ public class TestluenceWeight {
             doc.add(new StringField("id",ids[i],Field.Store.YES));
             doc.add(new StringField("author",authors[i],Field.Store.YES));
             doc.add(new StringField("position",positions[i],Field.Store.YES));
+            //在有间隔的字段上建立索引的话需要使用TextField而不是StringField，使用StringField不会进行分词
+            //根据position对title索引加权
+            TextField field = new TextField("title",titles[i],Field.Store.YES);
+            if ("boss".equals(positions[i])){
+                //setBoosts方法在6.6版本后已经被废除
+                //field.setBoost(2);
+            }
             doc.add(new TextField("title",titles[i],Field.Store.YES));
             doc.add(new TextField("content",contents[i],Field.Store.NO));
 
