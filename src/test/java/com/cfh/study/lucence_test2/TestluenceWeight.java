@@ -64,29 +64,4 @@ public class TestluenceWeight {
         writer.close();
     }
 
-    @Test
-    public void readIndex() throws Exception{
-        Directory directory = FSDirectory.open(Paths.get(dirPath));
-
-        IndexReader reader = DirectoryReader.open(directory);
-
-        IndexSearcher searcher = new IndexSearcher(reader);
-
-        String queryField = "title";//查询的索引
-
-        String queryContent = "java";//查询的内容
-
-        Term term = new Term(queryField,queryContent);//指定在哪个索引上查询哪些内容
-
-        Query query = new TermQuery(term);//使用TermQuery对索引中包含的内容进行查询
-
-        TopDocs docs = searcher.search(query, 10);//使用query对象查询前10条数据
-
-        System.out.println("查询到了"+docs.totalHits+"条数据");
-
-        for(ScoreDoc scoreDoc : docs.scoreDocs){
-            Document doc = searcher.doc(scoreDoc.doc);//根据docId获取Document
-            System.out.println(doc.get("title"));//使用document的get方法获取建立的索引中的内容
-        }
-    }
 }
