@@ -6,11 +6,10 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.*;
-import org.apache.lucene.search.*;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.junit.Test;
 
 import java.nio.file.Paths;
 
@@ -19,7 +18,7 @@ import java.nio.file.Paths;
  * @Date: 2018/9/15 19:24
  * @Description: 测试lucene的文档域权重的设置
  */
-public class TestluenceWeight {
+public class TestLueneWeight {
     String dirPath = "/Users/chenfeihao/Desktop/lucene/index3";
     private String ids[]={"1","2","3","4"};
     private String authors[]={"Jack","Marry","John","Json"};

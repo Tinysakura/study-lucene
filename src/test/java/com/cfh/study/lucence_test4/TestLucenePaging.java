@@ -5,7 +5,7 @@ package com.cfh.study.lucence_test4;
  * @Date: 2018/9/16 13:53
  * @Description： 测试lucene分页
  */
-public class TestlucenePaging {
+public class TestLucenePaging {
 
 
 }

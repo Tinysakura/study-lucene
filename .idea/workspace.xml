@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f78b0a3-f148-46c4-9cd4-93c7cb523e61" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestlucenePaging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/chenfeihao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test5/TestLuceneChinese.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test3/TestLuceneSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test3/TestLuceneSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestLueneWeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestlucenePaging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestLucenePaging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cfh/study/lucence_test2/TestluenceWeight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cfh/study/lucence_test3/TestLuceneSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cfh/study/lucence_test3/TestLuceneSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cfh/study/lucence_test4/TestlucenePaging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cfh/study/lucence_test4/TestlucenePaging.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,6 +19,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -35,83 +42,20 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+            <state relative-caret-position="332">
+              <caret line="57" column="42" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestLuceneSearch.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test3/TestLuceneSearch.java">
+      <file leaf-file-name="TestLuceneChinese.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test5/TestLuceneChinese.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="167" selection-start-line="167" selection-end-line="167" />
+            <state relative-caret-position="279">
+              <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestluenceWeight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestlucenePaging.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestlucenePaging.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cfh/study/lucence_demo1/Searcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldsQuery.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-queryparser/7.2.1/lucene-queryparser-7.2.1-sources.jar!/org/apache/lucene/queryparser/surround/query/FieldsQuery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#3317#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextField.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-core/7.2.1/lucene-core-7.2.1-sources.jar!/org/apache/lucene/document/TextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Field.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-core/7.2.1/lucene-core-7.2.1-sources.jar!/org/apache/lucene/document/Field.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -139,6 +83,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestlucenePaging.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test3/TestLuceneSearch.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestLueneWeight.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test5/TestLuceneChinese.java" />
       </list>
     </option>
   </component>
@@ -277,6 +223,15 @@
               <item name="study" type="462c0819:PsiDirectoryNode" />
               <item name="lucence_test4" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="studylucene" type="b2602c69:ProjectViewProjectNode" />
+              <item name="studylucene" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="study" type="462c0819:PsiDirectoryNode" />
+              <item name="lucence_test5" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -293,7 +248,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -307,23 +262,46 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestLuceneSearch.testAdvancedQueryParser">
+  <component name="RunManager" selected="JUnit.TestLuceneChinese.TestHignLighter">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TestLuceneSearch.fuzzySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLuceneChinese.TestHignLighter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="study-lucene" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cfh.study.lucence_test3.*" />
+          <option name="PATTERN" value="com.cfh.study.lucence_test5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.cfh.study.lucence_test3" />
-      <option name="MAIN_CLASS_NAME" value="com.cfh.study.lucence_test3.TestLuceneSearch" />
-      <option name="METHOD_NAME" value="fuzzySearch" />
+      <option name="PACKAGE_NAME" value="com.cfh.study.lucence_test5" />
+      <option name="MAIN_CLASS_NAME" value="com.cfh.study.lucence_test5.TestLuceneChinese" />
+      <option name="METHOD_NAME" value="TestHignLighter" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestLuceneChinese.createIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="study-lucene" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cfh.study.lucence_test5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.cfh.study.lucence_test5" />
+      <option name="MAIN_CLASS_NAME" value="com.cfh.study.lucence_test5.TestLuceneChinese" />
+      <option name="METHOD_NAME" value="createIndex" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -403,29 +381,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestluenceWeight.readIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="study-lucene" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cfh.study.lucence_test2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.cfh.study.lucence_test2" />
-      <option name="MAIN_CLASS_NAME" value="com.cfh.study.lucence_test2.TestluenceWeight" />
-      <option name="METHOD_NAME" value="readIndex" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -465,19 +420,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestluenceWeight.readIndex" />
-      <item itemvalue="JUnit.TestLuceneSearch.fuzzySearch" />
       <item itemvalue="JUnit.TestLuceneSearch.testQueryParser" />
       <item itemvalue="JUnit.TestLuceneSearch.testAdvancedQueryParser" />
       <item itemvalue="JUnit.TestLuceneSearch.proximitySearch" />
+      <item itemvalue="JUnit.TestLuceneChinese.createIndex" />
+      <item itemvalue="JUnit.TestLuceneChinese.TestHignLighter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestLuceneChinese.TestHignLighter" />
+        <item itemvalue="JUnit.TestLuceneChinese.createIndex" />
         <item itemvalue="JUnit.TestLuceneSearch.testAdvancedQueryParser" />
         <item itemvalue="JUnit.TestLuceneSearch.proximitySearch" />
         <item itemvalue="JUnit.TestLuceneSearch.testQueryParser" />
-        <item itemvalue="JUnit.TestLuceneSearch.fuzzySearch" />
-        <item itemvalue="JUnit.TestluenceWeight.readIndex" />
       </list>
     </recent_temporary>
   </component>
@@ -493,32 +448,11 @@
       <updated>1536995819327</updated>
       <workItem from="1536995824236" duration="3797000" />
       <workItem from="1537002009262" duration="8279000" />
-      <workItem from="1537075982006" duration="5327000" />
+      <workItem from="1537075982006" duration="9743000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 04m 56s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 05m 07s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 05m 37s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 06m 55s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 10m 34s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 10m 55s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 11m 27s.xml">
-      <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 13m 14s.xml">
       <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
     </history-entry>
@@ -528,9 +462,30 @@
     <history-entry file="TestLuceneSearch_testAdvancedQueryParser - 2018.09.16 at 15h 14m 50s.xml">
       <configuration name="TestLuceneSearch.testAdvancedQueryParser" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestLuceneChinese_createIndex - 2018.09.16 at 21h 03m 11s.xml">
+      <configuration name="TestLuceneChinese.createIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 09m 17s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 09m 44s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 09m 53s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 10m 17s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 10m 36s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLuceneChinese_TestHignLighter - 2018.09.16 at 21h 21m 45s.xml">
+      <configuration name="TestLuceneChinese.TestHignLighter" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17403000" />
+    <option name="totallyTimeSpent" value="21819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -625,7 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestLueneWeight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1273">
           <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
@@ -772,13 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestlucenePaging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cfh/study/lucence_demo1/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -800,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-core/7.2.1/lucene-core-7.2.1-sources.jar!/org/apache/lucene/search/PrefixQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -817,20 +758,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestluenceWeight.java">
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-core/7.2.1/lucene-core-7.2.1-sources.jar!/org/apache/lucene/search/BooleanQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="399">
+          <caret line="125" column="19" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18770#0" expanded="true" />
+            <element signature="e#4457#4458#0" expanded="true" />
+            <element signature="e#4514#4515#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test4/TestLucenePaging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test2/TestLueneWeight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-highlighter/7.2.1/lucene-highlighter-7.2.1.jar!/org/apache/lucene/search/highlight/SimpleFragmenter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/text/Highlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-highlighter/7.2.1/lucene-highlighter-7.2.1.jar!/org/apache/lucene/search/highlight/Highlighter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2629">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-highlighter/7.2.1/lucene-highlighter-7.2.1-sources.jar!/org/apache/lucene/search/highlight/Highlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/lucene/lucene-highlighter/7.2.1/lucene-highlighter-7.2.1-sources.jar!/org/apache/lucene/search/highlight/SimpleFragmenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test3/TestLuceneSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        <state relative-caret-position="1084">
+          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cfh/study/lucence_test5/TestLuceneChinese.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
