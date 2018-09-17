@@ -147,22 +147,22 @@ public class TestGroupingSearch {
      */
     @Test
     public void lucene7GroupBy() throws Exception{
-        GroupingSearch groupingSearch = new GroupingSearch(groupField);
-        groupingSearch.setGroupSort(new Sort(SortField.FIELD_SCORE));
-        groupingSearch.setFillSortFields(true);
+        GroupingSearch groupingSearch = new GroupingSearch(groupField);//指定要进行分组的索引
+        groupingSearch.setGroupSort(new Sort(SortField.FIELD_SCORE));//指定分组排序规则
+        groupingSearch.setFillSortFields(true);//是否填充SearchGroup的sortValues
         groupingSearch.setCachingInMB(4.0, true);
         groupingSearch.setAllGroups(true);
         //groupingSearch.setAllGroupHeads(true);
-        groupingSearch.setGroupDocsLimit(10);
+        groupingSearch.setGroupDocsLimit(10);//限制分组个数
 
         Analyzer analyzer = new StandardAnalyzer();
         QueryParser parser = new QueryParser("content", analyzer);
-        String queryExpression = "random content";
+        String queryExpression = "some content";
         Query query = parser.parse(queryExpression);
         Directory directory = FSDirectory.open(Paths.get(indexDir));
         IndexReader reader = DirectoryReader.open(directory);
         IndexSearcher searcher = new IndexSearcher(reader);
-
+        //在content索引上对包含some与content分词的索引进行具体查询，结果按照author索引的内容进行分组
         TopGroups<BytesRef> result = groupingSearch.search(searcher, query, 0, 1000);
 
         //总命中数
@@ -175,6 +175,7 @@ public class TestGroupingSearch {
                 if (groupDocs.groupValue != null) {
                     System.out.println("分组:" + groupDocs.groupValue.utf8ToString());
                 }else{
+                    //由于建立索引时有一条数据没有在分组索引上建立SortedDocValued索引，因此这个分组的groupValue为null
                     System.out.println("分组:" + "unknow");
                 }
                 System.out.println("组内数据条数:" + groupDocs.totalHits);
