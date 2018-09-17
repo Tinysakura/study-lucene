@@ -50,5 +50,6 @@ public class TestLuceneSort {
             System.out.println("title:"+searcher.doc(scoreDoc.doc).get("title"));
             System.out.println("========================================");
         }
+
     }
 }
