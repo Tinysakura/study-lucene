@@ -1,4 +1,4 @@
-package com.cfh.study.lucence_test5;
+package com.cfh.study.lucene_test5;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;

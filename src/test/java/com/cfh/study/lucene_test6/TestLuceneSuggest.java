@@ -1,4 +1,4 @@
-package com.cfh.study.lucence_test6;
+package com.cfh.study.lucene_test6;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.search.suggest.Lookup;

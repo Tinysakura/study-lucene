@@ -1,4 +1,4 @@
-package com.cfh.study.lucence_test4;
+package com.cfh.study.lucene_test4;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;

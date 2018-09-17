@@ -1,15 +1,14 @@
-package com.cfh.study.lucence_test2;
+package com.cfh.study.lucene_test2;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
-import org.apache.lucene.document.TextField;
+import org.apache.lucene.document.*;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.BytesRef;
+import org.junit.Test;
 
 import java.nio.file.Paths;
 
@@ -31,7 +30,7 @@ public class TestLueneWeight {
             "For example: with Java 1.4, `LetterTokenizer` will split around the character U+02C6,"
     };
 
-    //@Test
+    @Test
     public void createIndex() throws Exception{
         Directory directory = FSDirectory.open(Paths.get(dirPath));
 
@@ -45,6 +44,7 @@ public class TestLueneWeight {
             Document doc = new Document();
 
             doc.add(new StringField("id",ids[i],Field.Store.YES));
+            doc.add(new SortedDocValuesField("id", new BytesRef(ids[i])));
             doc.add(new StringField("author",authors[i],Field.Store.YES));
             doc.add(new StringField("position",positions[i],Field.Store.YES));
             //在有间隔的字段上建立索引的话需要使用TextField而不是StringField，使用StringField不会进行分词
