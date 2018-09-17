@@ -29,8 +29,8 @@ public class TestLuceneSuggest {
         List<Lookup.LookupResult> results = suggester.lookup(name, contexts, 2, true, false);
         System.out.println("-- \"" + name + "\" (" + region + "):");
         for (Lookup.LookupResult result : results) {
-            System.out.println(result.key);
-            //从载荷（payload）中反序列化出Product对象
+            System.out.println(result.key);//result.key中存储的是根据用户输入内部算法进行匹配后返回的suggest内容
+            //从载荷（payload）中反序列化出Product对象(实际生产中出于降低内存占用考虑一般不会在载荷中存储这么多内容)
             BytesRef bytesRef = result.payload;
             ObjectInputStream is = new ObjectInputStream(new ByteArrayInputStream(bytesRef.bytes));
             Product product = null;
