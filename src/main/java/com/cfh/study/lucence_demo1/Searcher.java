@@ -12,6 +12,7 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+
 import java.nio.file.Paths;
 
 /**
@@ -21,7 +22,7 @@ import java.nio.file.Paths;
  */
 public class Searcher {
 
-    public static void search(String indexDir,String query) throws Exception{
+    public static void search(String indexDir, String query) throws Exception {
 
         //获取索引文件的路径
         Directory dir = FSDirectory.open(Paths.get(indexDir));
@@ -47,7 +48,7 @@ public class Searcher {
         TopDocs hits = searcher.search(query1, 10);
 
         //对得到的结果进行遍历
-        for (ScoreDoc scoreDoc : hits.scoreDocs){
+        for (ScoreDoc scoreDoc : hits.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);
             //打印搜索到相关结果的文件的fullPath
             System.out.println((doc).get("fullPath"));
@@ -62,7 +63,7 @@ public class Searcher {
         String q = "Jean-Philippe Barrette-LaPierre";
 
         try {
-            search(indexDir,q);
+            search(indexDir, q);
         } catch (Exception e) {
             e.printStackTrace();
         }

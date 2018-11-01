@@ -23,19 +23,19 @@ public class TestLuceneCURD {
     String indexDir = "/Users/chenfeihao/Desktop/lucence/index2";
 
     // 下面是测试用到的数据
-    private String ids[] = { "1", "2", "3" };
-    private String citys[] = { "qingdao", "nanjing", "shanghai" };
-    private String descs[] = { "Qingdao is a beautiful city.", "Nanjing is a city of culture.",
-            "Shanghai is a bustling city." };
+    private String ids[] = {"1", "2", "3"};
+    private String citys[] = {"qingdao", "nanjing", "shanghai"};
+    private String descs[] = {"Qingdao is a beautiful city.", "Nanjing is a city of culture.",
+            "Shanghai is a bustling city."};
 
-    IndexWriter getWriter(){
+    IndexWriter getWriter() {
         try {
             //得到索引所在的目录
             Directory directory = FSDirectory.open(Paths.get(indexDir));
             //创建标准分词器
             Analyzer analyzer = new StandardAnalyzer();
             IndexWriterConfig iwConfig = new IndexWriterConfig(analyzer);
-            return new IndexWriter(directory,iwConfig);
+            return new IndexWriter(directory, iwConfig);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class TestLuceneCURD {
      * 测试索引的写入
      */
     //@Test
-    public void TestWriteIndex() throws Exception{
+    public void TestWriteIndex() throws Exception {
         IndexWriter writer = getWriter();
         for (int i = 0; i < ids.length; i++) {
             //创建文档对象，文档是索引和搜索的单位。

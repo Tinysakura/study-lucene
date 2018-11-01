@@ -21,7 +21,7 @@ public class TestLuceneSort {
     String indexDir = "/Users/chenfeihao/Desktop/lucene/index3";
 
     @Test
-    public void testCustomSort() throws Exception{
+    public void testCustomSort() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(indexDir));
 
         IndexReader reader = DirectoryReader.open(directory);
@@ -32,7 +32,7 @@ public class TestLuceneSort {
 
         Analyzer analyzer = new StandardAnalyzer();
 
-        QueryParser queryParser = new QueryParser(queryField,analyzer);
+        QueryParser queryParser = new QueryParser(queryField, analyzer);
 
         String queryExpression = "[1 TO 4]";
 
@@ -40,14 +40,14 @@ public class TestLuceneSort {
 
         //自定义排序规则
         //注意用来排序的索引必须是SortedDocValuesField类型或者是NumericDocValuesField类型，否则会抛异常
-        Sort sort = new Sort(new SortField("id",SortField.Type.STRING,false));
+        Sort sort = new Sort(new SortField("id", SortField.Type.STRING, false));
 
         //设置doDocScores为true而doMaxScore为false说明当多个查询条件都符合时取多条件中score最大的而不是score之和
         TopDocs docs = searcher.search(query, 10, sort, true, false);
-        System.out.println("共查询到了"+docs.totalHits+"篇文章");
-        for (ScoreDoc scoreDoc : docs.scoreDocs){
-            System.out.println("id:"+searcher.doc(scoreDoc.doc).get("id"));
-            System.out.println("title:"+searcher.doc(scoreDoc.doc).get("title"));
+        System.out.println("共查询到了" + docs.totalHits + "篇文章");
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
+            System.out.println("id:" + searcher.doc(scoreDoc.doc).get("id"));
+            System.out.println("title:" + searcher.doc(scoreDoc.doc).get("title"));
             System.out.println("========================================");
         }
 

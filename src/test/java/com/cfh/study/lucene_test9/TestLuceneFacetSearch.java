@@ -29,12 +29,12 @@ import java.util.List;
  * @Date: 2018/9/17 19:07
  * @Description: 测试Lucene的facet（方面查询）
  */
-public class TestLuceneFacetSearch{
+public class TestLuceneFacetSearch {
     final String indexDir = "/Users/chenfeihao/Desktop/lucene/index6";
     final String taxoDir = "/Users/chenfeihao/Desktop/lucene/taxo/taxo1";
 
     @Test
-    public void buildIndex() throws Exception{
+    public void buildIndex() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(indexDir));
         IndexWriter writer = new IndexWriter(directory, new IndexWriterConfig(new WhitespaceAnalyzer()));
         //使用DirectoryTaxonomyWriter写入进行切面查询所需要的Taxonomy索引
@@ -77,10 +77,11 @@ public class TestLuceneFacetSearch{
 
     /**
      * 对facet查询进行测试
+     *
      * @throws Exception
      */
     @Test
-    public void testFacetSearch() throws Exception{
+    public void testFacetSearch() throws Exception {
         Directory directory = FSDirectory
                 .open(Paths.get(indexDir));
         DirectoryReader indexReader = DirectoryReader.open(directory);
@@ -102,7 +103,7 @@ public class TestLuceneFacetSearch{
         Facets facets = new FastTaxonomyFacetCounts(taxoReader, config, facetsCollector);
         List<FacetResult> results = facets.getAllDims(10);
         //打印其他维度信息
-        for (FacetResult tmp : results){
+        for (FacetResult tmp : results) {
             System.out.println(tmp);
         }
 
@@ -159,11 +160,11 @@ public class TestLuceneFacetSearch{
 
     }
 
-    public void printDocs(TopDocs docs, IndexSearcher searcher) throws Exception{
-        for(ScoreDoc doc : docs.scoreDocs){
+    public void printDocs(TopDocs docs, IndexSearcher searcher) throws Exception {
+        for (ScoreDoc doc : docs.scoreDocs) {
             Document document = searcher.doc(doc.doc);
-            System.out.println("device:"+document.get("device"));
-            System.out.println("name:"+document.get("name"));
+            System.out.println("device:" + document.get("device"));
+            System.out.println("name:" + document.get("name"));
             System.out.println();
         }
     }

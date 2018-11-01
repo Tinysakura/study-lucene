@@ -25,9 +25,10 @@ public class Indexer {
 
     /**
      * 在配置文件中创建IndexWriter实例
+     *
      * @param indexDir
      */
-    public Indexer(String indexDir) throws Exception{
+    public Indexer(String indexDir) throws Exception {
         //得到索引所在的目录
         Directory directory = FSDirectory.open(Paths.get(indexDir));
         //创建标准分词器
@@ -35,21 +36,22 @@ public class Indexer {
         IndexWriterConfig iwConfig = new IndexWriterConfig(analyzer);
 
         //实例化IndexWriter
-        writer = new IndexWriter(directory,iwConfig);
+        writer = new IndexWriter(directory, iwConfig);
     }
 
     //关闭写索引
-    public void close() throws Exception{
+    public void close() throws Exception {
         writer.close();
     }
 
     /**
      * 获取文档
+     *
      * @param f
      * @return
      * @throws Exception
      */
-    Document getDocument(File f) throws Exception{
+    Document getDocument(File f) throws Exception {
         Document doc = new Document();
         //设置内容索引
         doc.add(new TextField("contents", new FileReader(f)));
@@ -63,10 +65,11 @@ public class Indexer {
 
     /**
      * 为文件写索引
+     *
      * @param file
      * @throws Exception
      */
-    void indexFile(File file) throws Exception{
+    void indexFile(File file) throws Exception {
         //获取文档
         Document document = getDocument(file);
 
@@ -75,10 +78,10 @@ public class Indexer {
     }
 
     //为一个目录下的所有文件写索引
-    public int index(String dataDir) throws Exception{
+    public int index(String dataDir) throws Exception {
         File[] files = new File(dataDir).listFiles();
 
-        for(File f : files){
+        for (File f : files) {
             indexFile(f);
         }
 
@@ -102,7 +105,7 @@ public class Indexer {
             indexNum = indexer.index(dataDir);
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 indexer.close();//关闭资源
             } catch (Exception e) {
@@ -111,6 +114,6 @@ public class Indexer {
         }
 
         long endTime = System.currentTimeMillis();
-        System.out.println("建立索引花费了"+(endTime-startTime)+"ms");
+        System.out.println("建立索引花费了" + (endTime - startTime) + "ms");
     }
 }

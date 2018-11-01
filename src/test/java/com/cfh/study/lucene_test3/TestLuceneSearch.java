@@ -25,10 +25,11 @@ public class TestLuceneSearch {
 
     /**
      * 测试模糊查询（FuzzySearch）
+     *
      * @throws Exception
      */
     @Test
-    public void fuzzySearch() throws Exception{
+    public void fuzzySearch() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(dirPath));
 
         IndexReader reader = DirectoryReader.open(directory);
@@ -40,7 +41,7 @@ public class TestLuceneSearch {
         String queryContent = "java";//查询的内容
 
 
-        Term term = new Term(queryField,queryContent);//指定在哪个索引上查询哪些内容
+        Term term = new Term(queryField, queryContent);//指定在哪个索引上查询哪些内容
 
         /*
           FuzzyQuery支持模糊查询，第三个参数为允许的错词(错词包括漏词和错词)
@@ -49,9 +50,9 @@ public class TestLuceneSearch {
 
         TopDocs docs = searcher.search(query, 10);//使用query对象查询前10条数据
 
-        System.out.println("查询到了"+docs.totalHits+"条数据");
+        System.out.println("查询到了" + docs.totalHits + "条数据");
 
-        for(ScoreDoc scoreDoc : docs.scoreDocs){
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);//根据docId获取Document
             System.out.println(doc.get("title"));//使用document的get方法获取建立的索引中的内容
         }
@@ -59,10 +60,11 @@ public class TestLuceneSearch {
 
     /**
      * 使用TermQuery对指定项进行搜索
+     *
      * @throws Exception
      */
     @Test
-    public void readIndex() throws Exception{
+    public void readIndex() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(dirPath));
 
         IndexReader reader = DirectoryReader.open(directory);
@@ -73,15 +75,15 @@ public class TestLuceneSearch {
 
         String queryContent = "java";//查询的内容
 
-        Term term = new Term(queryField,queryContent);//指定在哪个索引上查询哪些内容
+        Term term = new Term(queryField, queryContent);//指定在哪个索引上查询哪些内容
 
         Query query = new TermQuery(term);//使用TermQuery对索引中包含的内容进行查询
 
         TopDocs docs = searcher.search(query, 10);//使用query对象查询前10条数据
 
-        System.out.println("查询到了"+docs.totalHits+"条数据");
+        System.out.println("查询到了" + docs.totalHits + "条数据");
 
-        for(ScoreDoc scoreDoc : docs.scoreDocs){
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);//根据docId获取Document
             System.out.println(doc.get("title"));//使用document的get方法获取建立的索引中的内容
         }
@@ -91,7 +93,7 @@ public class TestLuceneSearch {
      * 测试查询表达式的使用
      */
     @Test
-    public void testQueryParser() throws Exception{
+    public void testQueryParser() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(dirPath));
 
         IndexReader reader = DirectoryReader.open(directory);
@@ -108,9 +110,9 @@ public class TestLuceneSearch {
 
         TopDocs docs = searcher.search(query, 10);//使用query对象查询前10条数据
 
-        System.out.println("查询到了"+docs.totalHits+"条数据");
+        System.out.println("查询到了" + docs.totalHits + "条数据");
 
-        for(ScoreDoc scoreDoc : docs.scoreDocs){
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);//根据docId获取Document
             System.out.println(doc.get("title"));//使用document的get方法获取建立的索引中的内容
         }
@@ -120,7 +122,7 @@ public class TestLuceneSearch {
      * 解析表达式（QueryParser）的高级使用
      */
     @Test
-    public void testAdvancedQueryParser() throws Exception{
+    public void testAdvancedQueryParser() throws Exception {
         Directory directory = FSDirectory.open(Paths.get(dirPath));
 
         IndexReader reader = DirectoryReader.open(directory);
@@ -131,7 +133,7 @@ public class TestLuceneSearch {
 
         Analyzer analyzer = new StandardAnalyzer();
 
-        QueryParser queryParser = new QueryParser(queryField,analyzer);//使用指定的分词器构建QueryParser
+        QueryParser queryParser = new QueryParser(queryField, analyzer);//使用指定的分词器构建QueryParser
 
         /*
           测试不同的单条件queryExpression的查询效果
@@ -140,7 +142,7 @@ public class TestLuceneSearch {
         //String queryExpression = "when OR possible";//OR表示查询的索引中可以包含任意被OR连接的内容，OR默认可以省略
         //注意所有模糊查询都可以放在表达式开头否则将失去效果
         //String queryExpression = "upgrading?";//?表示模糊查询，？只能指代分词中的一个字符
-        //String queryExpression = "upgrad*";//*表示模糊查询，*可以指代分词中的多个字符
+        //String queryExpression = "\"[1 TO 9]*\" OR \"[a TO z]*\" OR \"[A TO Z]*\"";//*表示模糊查询，*可以指代分词中的多个字符
         //String queryExpression = "ugrding~";//~表示相似度查询，会查询与指代的分词相似的内容（是否相似由算法决定）
         //String queryExpression = "\"upgrading different\"~10";//距离查询，~10表示在查询的索引中upgrading与different之间最多可以有10个分词
         //String queryExpression = "id:[1 TO 3]";//闭区间的范围查询（id:指定了查询的索引为id）
@@ -170,17 +172,20 @@ public class TestLuceneSearch {
           转义特殊字符我们可以使用符号“\”放于字符之前。比如我们要搜索(1+1):2，我们可以使用如下语法：\(1\+1\)\:2
          */
 
-        String queryExpression = null;
 
-        Query query = queryParser.parse(queryExpression);
+        //Query query = queryParser.parse(queryExpression);
 
+        BooleanQuery.Builder builder = new BooleanQuery.Builder();
+
+//        Query query = new TermRangeQuery("content", new BytesRef("a"), new BytesRef("z"), true, true);
+        Query query = new WildcardQuery(new Term("*"));
         TopDocs docs = searcher.search(query, 10);
 
         //打印在哪一篇文章中查询到的结果
-        System.out.println("共查询到了"+docs.totalHits+"篇文章");
-        for (ScoreDoc scoreDoc : docs.scoreDocs){
-            System.out.println("id:"+searcher.doc(scoreDoc.doc).get("id"));
-            System.out.println("title:"+searcher.doc(scoreDoc.doc).get("title"));
+        System.out.println("共查询到了" + docs.totalHits + "篇文章");
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
+            System.out.println("id:" + searcher.doc(scoreDoc.doc).get("id"));
+            System.out.println("title:" + searcher.doc(scoreDoc.doc).get("title"));
             System.out.println("========================================");
         }
     }

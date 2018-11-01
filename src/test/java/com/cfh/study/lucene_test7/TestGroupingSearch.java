@@ -30,7 +30,7 @@ public class TestGroupingSearch {
     static String groupField = "author";
 
     @Test
-    public void mainTest() throws Exception{
+    public void mainTest() throws Exception {
         //createIndex();
 //        Directory directory = FSDirectory.open(Paths.get(indexDir));
 //        IndexReader reader = DirectoryReader.open(directory);
@@ -129,12 +129,9 @@ public class TestGroupingSearch {
     /**
      * 添加分组域
      *
-     * @param doc
-     *            索引文档
-     * @param groupField
-     *            需要分组的域名称
-     * @param value
-     *            域值
+     * @param doc        索引文档
+     * @param groupField 需要分组的域名称
+     * @param value      域值
      */
     private static void addGroupField(Document doc, String groupField,
                                       String value) {
@@ -146,7 +143,7 @@ public class TestGroupingSearch {
      * 测试lucene7环境下的分组查询
      */
     @Test
-    public void lucene7GroupBy() throws Exception{
+    public void lucene7GroupBy() throws Exception {
         GroupingSearch groupingSearch = new GroupingSearch(groupField);//指定要进行分组的索引
         groupingSearch.setGroupSort(new Sort(SortField.FIELD_SCORE));//指定分组排序规则
         groupingSearch.setFillSortFields(true);//是否填充SearchGroup的sortValues
@@ -166,21 +163,21 @@ public class TestGroupingSearch {
         TopGroups<BytesRef> result = groupingSearch.search(searcher, query, 0, 1000);
 
         //总命中数
-        System.out.println("总命中数:"+result.totalHitCount);
+        System.out.println("总命中数:" + result.totalHitCount);
         //分组数
-        System.out.println("分组数:"+result.groups.length);
+        System.out.println("分组数:" + result.groups.length);
         //按照分组打印查询结果
-        for (GroupDocs<BytesRef> groupDocs : result.groups){
+        for (GroupDocs<BytesRef> groupDocs : result.groups) {
             if (groupDocs != null) {
                 if (groupDocs.groupValue != null) {
                     System.out.println("分组:" + groupDocs.groupValue.utf8ToString());
-                }else{
+                } else {
                     //由于建立索引时有一条数据没有在分组索引上建立SortedDocValued索引，因此这个分组的groupValue为null
                     System.out.println("分组:" + "unknow");
                 }
                 System.out.println("组内数据条数:" + groupDocs.totalHits);
 
-                for(ScoreDoc scoreDoc : groupDocs.scoreDocs){
+                for (ScoreDoc scoreDoc : groupDocs.scoreDocs) {
                     System.out.println("author:" + searcher.doc(scoreDoc.doc).get("author"));
                     System.out.println("content:" + searcher.doc(scoreDoc.doc).get("content"));
                     System.out.println();

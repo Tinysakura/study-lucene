@@ -35,7 +35,7 @@ public class TestLuceneSuggest {
             ObjectInputStream is = new ObjectInputStream(new ByteArrayInputStream(bytesRef.bytes));
             Product product = null;
             try {
-                product = (Product)is.readObject();
+                product = (Product) is.readObject();
             } catch (ClassNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -49,7 +49,7 @@ public class TestLuceneSuggest {
     }
 
     @Test
-    public void mainTest(){
+    public void mainTest() {
         try {
             RAMDirectory indexDir = new RAMDirectory();
             StandardAnalyzer analyzer = new StandardAnalyzer();
@@ -58,17 +58,17 @@ public class TestLuceneSuggest {
             //创建Product测试数据
             ArrayList<Product> products = new ArrayList<Product>();
             products.add(new Product("Electric Guitar",
-                    "http://images.example/electric-guitar.jpg", new String[] {
-                    "US", "CA" }, 100));
+                    "http://images.example/electric-guitar.jpg", new String[]{
+                    "US", "CA"}, 100));
             products.add(new Product("Electric Train",
-                    "http://images.example/train.jpg", new String[] { "US",
-                    "CA" }, 100));
+                    "http://images.example/train.jpg", new String[]{"US",
+                    "CA"}, 100));
             products.add(new Product("Acoustic Guitar",
-                    "http://images.example/acoustic-guitar.jpg", new String[] {
-                    "US", "ZA" }, 80));
+                    "http://images.example/acoustic-guitar.jpg", new String[]{
+                    "US", "ZA"}, 80));
             products.add(new Product("Guarana Soda",
                     "http://images.example/soda.jpg",
-                    new String[] { "ZA", "IE" }, 130));
+                    new String[]{"ZA", "IE"}, 130));
 
             // 创建测试索引
             suggester.build(new ProductIterator(products.iterator()));

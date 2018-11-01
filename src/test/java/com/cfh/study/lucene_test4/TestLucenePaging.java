@@ -32,7 +32,7 @@ public class TestLucenePaging {
     QueryParser queryParser;
 
     @Before
-    public void init() throws Exception{
+    public void init() throws Exception {
         directory = FSDirectory.open(Paths.get(indexDir));
         reader = DirectoryReader.open(directory);
 
@@ -45,50 +45,52 @@ public class TestLucenePaging {
      * 一次性查询所有结果，将结果缓存在内存中，根据分页信息从内存中取对应页的document
      */
     @Test
-    public void testPaginInMemoringCache(){
+    public void testPaginInMemoringCache() {
 
     }
 
     /**
      * 获取上一页最后一个文档
+     *
      * @param pageNum
      * @param pageSize
      * @param query
      * @return
      * @throws Exception
      */
-    public ScoreDoc getLastDoc(int pageNum, int pageSize, Query query) throws Exception{
-        if(pageNum == 1){
+    public ScoreDoc getLastDoc(int pageNum, int pageSize, Query query) throws Exception {
+        if (pageNum == 1) {
             return null;
         }
 
         int num = pageSize * (pageNum - 1);//计算上一页文档的数量
         TopDocs tds = searcher.search(query, num);
 
-        return tds.scoreDocs[num-1];
+        return tds.scoreDocs[num - 1];
     }
 
     /**
      * 使用IndexSearcher的searchAfter方法进行分页查询
+     *
      * @param pageNum
      * @param pageSize
      * @param query
      * @throws Exception
      */
-    public void testAfterSearcher(int pageNum, int pageSize, Query query) throws Exception{
+    public void testAfterSearcher(int pageNum, int pageSize, Query query) throws Exception {
         System.out.println("testAfterSearcher");
 
         ScoreDoc lastDoc = getLastDoc(pageNum, pageSize, query);
         TopDocs tds = searcher.searchAfter(lastDoc, query, pageSize);//查询lastDoc后的pageSize条数据
 
-        for (ScoreDoc scoreDoc : tds.scoreDocs){
+        for (ScoreDoc scoreDoc : tds.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);
             System.out.println(doc.get("id"));
         }
     }
 
     @Test
-    public void mainTest() throws Exception{
+    public void mainTest() throws Exception {
         Analyzer analyzer = new StandardAnalyzer();
         QueryParser queryParser = new QueryParser("content", analyzer);
 

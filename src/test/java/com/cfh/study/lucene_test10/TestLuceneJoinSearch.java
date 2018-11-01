@@ -28,7 +28,7 @@ public class TestLuceneJoinSearch {
     final String toField = "productId";
 
     //@Test
-    public void createIndex() throws Exception{
+    public void createIndex() throws Exception {
         Directory dir = FSDirectory.open(Paths.get(indexDir));
         Analyzer analyzer = new StandardAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
@@ -104,10 +104,11 @@ public class TestLuceneJoinSearch {
 
     /**
      * 测试join查询
+     *
      * @throws Exception
      */
     @Test
-    public void testJoinSearch() throws Exception{
+    public void testJoinSearch() throws Exception {
         Directory dir = FSDirectory.open(Paths.get(indexDir));
         IndexReader reader = DirectoryReader.open(dir);
         IndexSearcher searcher = new IndexSearcher(reader);
@@ -119,30 +120,30 @@ public class TestLuceneJoinSearch {
         //toField值也为4,于是查询转为查询所有toField索引（这里指定为了productId）值为4的文档
         Query joinQuery = JoinUtil.createJoinQuery(idField, false, toField, new TermQuery(new Term("name", "name2")), searcher, ScoreMode.None);
         TopDocs docs = searcher.search(joinQuery, 10);
-        System.out.println("查询到文档数:"+docs.totalHits);
-        for (ScoreDoc scoreDoc : docs.scoreDocs){
+        System.out.println("查询到文档数:" + docs.totalHits);
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);
-            System.out.println(idField+":"+doc.get(idField));
-            System.out.println(toField+":"+doc.get(toField));
+            System.out.println(idField + ":" + doc.get(idField));
+            System.out.println(toField + ":" + doc.get(toField));
         }
 
         joinQuery = JoinUtil.createJoinQuery(idField, false, toField, new TermQuery(new Term("name", "name1")), searcher, ScoreMode.None);
         docs = searcher.search(joinQuery, 10);
-        System.out.println("查询到的文档数："+docs.totalHits);
-        for (ScoreDoc scoreDoc : docs.scoreDocs){
+        System.out.println("查询到的文档数：" + docs.totalHits);
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);
-            System.out.println(idField+":"+doc.get(idField));
-            System.out.println(toField+":"+doc.get(toField));
+            System.out.println(idField + ":" + doc.get(idField));
+            System.out.println(toField + ":" + doc.get(toField));
         }
 
         // 根据商品连接查询offer,查询出的结果为所有id为4的offer
         joinQuery = JoinUtil.createJoinQuery(toField, false, idField, new TermQuery(new Term("id", "5")), searcher, ScoreMode.None);
         docs = searcher.search(joinQuery, 10);
-        System.out.println("查询到的匹配数据："+docs.totalHits);
-        for (ScoreDoc scoreDoc : docs.scoreDocs){
+        System.out.println("查询到的匹配数据：" + docs.totalHits);
+        for (ScoreDoc scoreDoc : docs.scoreDocs) {
             Document doc = searcher.doc(scoreDoc.doc);
-            System.out.println(idField+":"+doc.get(idField));
-            System.out.println(toField+":"+doc.get(toField));
+            System.out.println(idField + ":" + doc.get(idField));
+            System.out.println(toField + ":" + doc.get(toField));
         }
 
         reader.close();
